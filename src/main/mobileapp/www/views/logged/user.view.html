@@ -1,0 +1,61 @@
+<ion-view cache-view="false" hide-back-button="true" class="pane">
+ <ion-header-bar class="bar bar-header bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar">
+      <div side="left" class="buttons buttons-left header-item">
+        <button class="button button-clear" ng-if="!User.inserting || !User.editing" menu-toggle="left" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-navicon"></i> </button>
+        <button class="button button-clear" ng-if="User.inserting || User.editing" ng-click="User.cancel()" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-ios-arrow-back"></i> </button>
+      </div>
+        <h1 class="title">User</h1>
+      <div side="right" class="buttons buttons-right header-item">
+        <button class="button button-clear" ng-if="!User.inserting || !User.editing" ng-click="User.startInserting()" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-ios-plus-empty"></i> </button>
+        <button class="button button-clear" ng-if="User.inserting || User.editing" ng-click="User.post()" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-ios-checkmark"></i> </button>
+      </div>
+  </ion-header-bar>
+  <ion-content class="scroll-content has-header" data-component="crn-ion-content">
+    <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-906854">
+      <datasource name="User" entity="api/cronapi/crud/app.entity.User" keys="id" rows-per-page="10" delete-message="Deseja remover?" class=""></datasource>
+    </div>
+    <div crn-datasource="User" class="" ng-hide="User.editing || User.inserting">
+      <div class="component-holder ng-binding ng-scope" data-component="crn-ion-list" id="crn-ion-list-main">
+        <cron-list id="ion-list-main" options="{&quot;dataSourceScreen&quot;:{&quot;name&quot;:&quot;User&quot;,&quot;entity&quot;:&quot;app.User&quot;,&quot;entityDataSource&quot;:{&quot;id&quot;:&quot;app.User&quot;,&quot;customId&quot;:&quot;User&quot;,&quot;name&quot;:&quot;User&quot;,&quot;customQueryName&quot;:&quot;app.User&quot;,&quot;paramValues&quot;:[],&quot;entityFullName&quot;:&quot;app.entity.User&quot;,&quot;schemaFields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;login&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;picture&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;password&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;theme&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}],&quot;type&quot;:&quot;entity&quot;},&quot;schema&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;login&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;picture&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;password&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;theme&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}],&quot;id&quot;:&quot;app.User&quot;},&quot;allowPaging&quot;:true,&quot;allowSorting&quot;:true,&quot;allowGrouping&quot;:true,&quot;allowSelectionTotalPageToShow&quot;:true,&quot;allowRefreshGrid&quot;:true,&quot;allowSelectionRow&quot;:true,&quot;editable&quot;:&quot;popupCustom&quot;,&quot;popupInsert&quot;:&quot;modalUserGrid&quot;,&quot;popupEdit&quot;:&quot;modalUserGrid&quot;,&quot;columns&quot;:[{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;email&quot;,&quot;headerText&quot;:&quot;Email&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;},{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;name&quot;,&quot;headerText&quot;:&quot;Name&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;},{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;login&quot;,&quot;headerText&quot;:&quot;Login&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;},{&quot;dataType&quot;:&quot;Command&quot;,&quot;sortable&quot;:false,&quot;filterable&quot;:false,&quot;visible&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;command&quot;:&quot;edit|destroy&quot;,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;}],&quot;toolBarButtons&quot;:[{&quot;type&quot;:&quot;Native&quot;,&quot;title&quot;:&quot;create&quot;}],&quot;details&quot;:[]}" class="" style="">
+        </cron-list>
+      </div>
+    </div>
+    <div ng-show="User.editing || User.inserting">
+      <form crn-datasource="User">
+        <fieldset ng-disabled="!User.editing &amp;&amp; !User.inserting">
+          <div class="list">
+            <!-- email begin -->
+            <label for="textinput-email" class="item item-input item-stacked-label">
+              <span class="input-label">Email</span>
+              <input type="text" placeholder="Email" ng-model="User.active.email" id="textinput-email" name="textinput-email">
+            </label>
+            <!-- name begin -->
+            <label for="textinput-name" class="item item-input item-stacked-label">
+              <span class="input-label">{{'Users.view.Name' | translate}}</span>
+              <input type="text" placeholder="{{'Users.view.Name' | translate}}" ng-model="User.active.name" id="textinput-name" name="textinput-name" required="required">
+            </label>
+            <!-- login begin -->
+            <label for="textinput-login" class="item item-input item-stacked-label">
+              <span class="input-label">{{'Users.view.Login' | translate}}</span>
+              <input type="text" placeholder="{{'Users.view.Login' | translate}}" ng-model="User.active.login" id="textinput-login" name="textinput-login" required="required">
+            </label>
+            <!-- picture begin -->
+            <label for="textinput-picture" class="item item-input item-stacked-label">
+              <span class="input-label">{{'Admin.view.Picture' | translate}}</span>
+              <input type="text" placeholder="{{'Admin.view.Picture' | translate}}" ng-model="User.active.picture" id="textinput-picture" name="textinput-picture">
+            </label>
+            <!-- password begin -->
+            <label for="textinput-password" class="item item-input item-stacked-label">
+              <span class="input-label">{{'Home.view.Password' | translate}}</span>
+              <input type="text" placeholder="{{'Home.view.Password' | translate}}" ng-model="User.active.password" id="textinput-password" name="textinput-password" required="required">
+            </label>
+
+            <!-- NtoN  -->
+            <!-- NtoN  end-->
+
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

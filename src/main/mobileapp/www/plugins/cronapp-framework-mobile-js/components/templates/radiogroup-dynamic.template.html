@@ -1,0 +1,15 @@
+<div class="component-holder ng-binding ng-scope" data-component="crn-radiogroup" id="crn-radiogroup-726495"> 
+  <div class="list radio-group" crn-datasource="[{'key': 1,'value':'Value 1' },{'key': 2,'value':'Value 2','checked' : false },{'key': 3,'value':'Value 3'}]"> 
+	<div class="item item-divider ng-binding">
+	   RadioGroup : {{datasource.active}}
+	</div> 
+	<label class="item item-radio ng-not-empty ng-valid" ng-repeat="rowData in datasource.data"> 
+	<input type="radio" ng-model="datasource.active" ng-value="rowData.key" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" style="">
+	  <div class="radio-content">
+		<div class="item-content disable-pointer-events">
+		  <span class="ng-binding">{{rowData.value}}</span>
+		</div>
+		<i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+	  </div></label>
+  </div> 
+</div> 

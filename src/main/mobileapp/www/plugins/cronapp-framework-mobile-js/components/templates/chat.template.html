@@ -1,0 +1,39 @@
+<div id="starter" ng-init="" ng-destroy=""  class="homeView" cache-view="false" ng-controller="chatController">
+<link href="plugins/cronapp-framework-mobile-js/dist/components/css/chatStyle.css" rel="stylesheet"> 
+  <ion-content overflow-scroll="false" has-bouncing="true" class="has-header has-footer" delegate-handle="userMessageScroll" on-scroll="checkScroll()"> 
+    <div ng-model="vars.chatMessages"  ng-repeat="message in vars.chatMessages" class="message-wrapper" ng-init="$last &amp;&amp; refreshScroll(user.id === message.userId)" data-component="crn-item-options"> 
+      <div ng-if="vars.user !== message.from"> 
+        <img class="profile-pic left" ng-src="img/nophoto.png" src="img/nophoto.png"> 
+        <div class="chat-bubble left"> 
+          <div class="message-detail"> 
+            <span class="bold">{{message.from}}</span>, 
+            <span am-time-ago="message.date"></span> 
+          </div> 
+          <img ng-click="photoBrowser(message)" ng-if="message.photo" ng-src="{{message.photo}}" ng-success="refreshScroll(scrollDown)"> 
+          <div ng-if="!message.photo" class="message" ng-bind-html="message.text"> 
+          </div> 
+        </div> 
+      </div> 
+      <div ng-if="vars.user === message.from"> 
+        <img class="profile-pic right" ng-src="img/user.png" src="img/user.png"> 
+        <div class="chat-bubble right"> 
+          <div class="message-detail"> 
+            <span class="bold">{{message.from}}</span>, 
+            <span am-time-ago="message.date"></span> 
+          </div> 
+          <img ng-click="photoBrowser(message)" ng-if="message.photo" ng-src="{{message.photo}}" ng-success="refreshScroll($last)"> 
+          <div ng-if="!message.photo" class="message" ng-bind-html="message.text " autolinker=""> 
+          </div> 
+        </div> 
+      </div> 
+      <div class="cf"></div> 
+    </div> 
+  </ion-content> 
+  <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach=""> 
+    <label class="item-input-wrapper"> <textarea ng-model="vars.message" value="" placeholder="..." ng-keydown="isEnter($event)" data-component="crn-textarea"></textarea> </label> 
+    <div class="footer-btn-wrap"> 
+      <button class="button button-icon icon ion-android-send footer-btn" type="submit" ng-disabled="!vars.message || vars.message === ''" ng-click="" id="sendButton" data-component="crn-button"> </button> 
+      <a ng-click="refreshScroll(true, 50)" ng-show="!scrollDown" class="scrollDownBtn button button-icon icon ion-android-arrow-dropdown-circle"></a> 
+    </div> 
+  </ion-footer-bar> 
+</div>

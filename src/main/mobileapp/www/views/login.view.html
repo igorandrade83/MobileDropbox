@@ -1,0 +1,32 @@
+<ion-view cache-view="false" can-swipe-back="false" class="pane login-bg" data-container="true">
+  <ion-content class="scroll-content center-content-vertically" data-component="crn-ion-content">
+    <div class="list" data-container="true">
+      <div class="col text-center">
+        <img src="img/logo.svg" class="component-holder logo" style="display: block; margin-left:auto; margin-right:auto;" xattr-position="display: block; margin-left:auto; margin-right:auto;" data-component="crn-image" id="crn-image-960683">
+      </div>
+    </div>
+    <form class="form-validation" autocomplete="off" name="form" role="form">
+      <div class="list list-inset login-mobile" data-container="true">
+        <label class="item item-input component-holder" data-component="crn-input-icon" id="crn-input-icon-228215">
+          <i class="icon placeholder-icon ion ion-person"></i>
+          <input autocomplete="off" autocorrect="off" autocapitalize="off" type="text" placeholder="{{'Login.view.Username' | translate}}" ng-model="vars.username">
+        </label>
+        <label class="item item-input component-holder" data-component="crn-input-icon" id="crn-input-icon37951">
+          <i class="icon placeholder-icon ion ion-asterisk"></i>
+          <input autocomplete="new-password" type="password" placeholder="{{'Login.view.Password' | translate}}" ng-model="vars.password">
+        </label>
+        <label class="item">
+          <button class="button component-holder button-full button-positive" type="button" ng-click="cronapi.client('js.blockly.auth.Login.login').run(vars.username, vars.password, null)" data-component="crn-button" id="crn-button-445347" xattr-fullsize="button-full" xattr-theme="button-positive" ng-disabled="form.$invalid || vm.dataLoading">
+            <i class=""></i>
+            <span>{{"Login.view.Login" | translate}}</span>
+          </button>
+        </label>
+        <label class="item">
+          <div ng-show="message.error" class="help-block" data-container="true">
+            {{message.error}}
+          </div>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

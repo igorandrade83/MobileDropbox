@@ -1,0 +1,5330 @@
+{
+  "name": "cronos-components-mobile-phonegap",
+  "version": "1.0.0",
+  "components": [
+    {
+      "name": "crn-datasource",
+      "wrapper": false,
+      "autoWrapper": true,
+      "order": 0,
+      "text_pt_BR": "Fonte de dados",
+      "text_en_US": "Datasource",
+      "class": "adjust-icon mdi mdi-table-large",
+      "template": "<datasource name=\"\" entity=\"\" keys=\"\" rows-per-page=\"100\" on-before-create=\"\" on-after-create=\"\" on-before-update=\"\" on-after-update=\"\" on-before-delete=\"\" on-after-delete=\"\" on-after-fill=\"\"><i class=\"cpn cpn-datasource\" ></i></datasource>",
+      "properties": {
+        "entity": {
+          "removable": false,
+          "global": true
+        },
+        "parameters": {
+          "removable": false,
+          "global": true
+        },
+        "checkrequired": {
+          "removable": false,
+          "type": "logic",
+          "global": true
+        },
+        "lazy": {
+          "removable": false,
+          "type": "logic"
+        },
+        "keys": {
+          "removable": false,
+          "type": "datasourceKeys",
+          "global": true
+        },
+        "on-before-create": {
+          "removable": true,
+          "type": "event",
+          "global": true
+        },
+        "on-before-update": {
+          "removable": true,
+          "type": "event",
+          "global": true
+        },
+        "on-before-delete": {
+          "removable": true,
+          "type": "event",
+          "global": true
+        },
+        "on-after-create": {
+          "removable": true,
+          "type": "event",
+          "global": true
+        },
+        "on-after-update": {
+          "removable": true,
+          "type": "event",
+          "global": true
+        },
+        "on-after-delete": {
+          "removable": true,
+          "type": "event",
+          "global": true
+        },
+        "on-after-fill": {
+          "removable": true,
+          "type": "event",
+          "global": true
+        },
+        "on-error": {
+          "removable": true,
+          "type": "event",
+          "global": true
+        },
+        "dependent-lazy-post": {
+          "removable": false,
+          "global": true,
+          "type": "pageDatasourceObject"
+        }
+      }
+    },
+    {
+      "name": "crn-anchor",
+      "text_pt_BR": "Link",
+      "text_en_US": "Link",
+      "class": "adjust-icon mdi mdi-link",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/anchor.template.html",
+      "properties": {
+        "ng-click": {
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        },
+        "target": {
+          "removable": false,
+          "type": "list",
+          "options": [
+            {
+              "key": "_blank",
+              "value": "Nova janela"
+            },
+            {
+              "key": "_self",
+              "value": "Mesma janela"
+            },
+            {
+              "key": "_parent",
+              "value": "Janela pai"
+            },
+            {
+              "key": "_top",
+              "value": "Top"
+            }
+          ]
+        },
+        "href": {
+          "removable": false,
+          "type": "projectResource",
+          "resourceType": "text/html",
+          "extraOptions": {
+            "underViewsFolder": true
+          }
+        },
+        "xattr-fullsize": {
+          "displayName": "Width"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-fullsize",
+          "type": "options",
+          "target": "style",
+          "values": [
+            {
+              "key": "display:block;",
+              "value": "Block"
+            },
+            {
+              "key": "display:inline;",
+              "value": "Inline"
+            }
+          ]
+        }
+      ],
+      "childrenProperties": [
+        {
+          "name": "ng-mouseover",
+          "selector": "a",
+          "type": "event"
+        }
+      ]
+    },
+    {
+      "name": "crn-tabs",
+      "text_pt_BR": "Abas",
+      "text_en_US": "Tabs",
+      "class": "cpn cpn-tabs",
+      "pallete": false,
+      "properties": {
+        "orientation": {
+          "removable": false,
+          "type": "list",
+          "options": [
+            {
+              "key": "top",
+              "value": "No topo"
+            },
+            {
+              "key": "bottom",
+              "value": "Na base"
+            }
+          ]
+        }
+      },
+      "handleRules": {
+        "canOrder": true,
+        "canActivate": true,
+        "canIncrement": true,
+        "rules": [
+          {
+            "activeClass": "active",
+            "sourceHTML": "<a href='#' class='tab-item component-holder' target='_self' data-component='crn-anchor'>Link</a>",
+            "targetSelector": "div.tabs"
+          }
+        ]
+      },
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/tabs.template.html"
+    },
+    {
+      "name": "crn-navbar",
+      "text_pt_BR": "Barra de navegação",
+      "text_en_US": "Navbar",
+      "class": "adjust-icon mdi mdi-navigation",
+      "template": "",
+      "pallete": false,
+      "properties": {
+        "xattr-theme": {
+          "displayName": "Theme"
+        }
+      },
+      "controls": {
+        "ungroup": true,
+        "resizable": false,
+        "additive": false,
+        "duplicable": false,
+        "pluggable": false,
+        "removable": false
+      },
+      "droppableArea": {
+        "onmiddle": true,
+        "ontop": false,
+        "onbottom": false,
+        "onleft": false,
+        "onright": false
+      },
+      "childrenProperties": [
+        {
+          "name": "content",
+          "selector": "h1[class='title']",
+          "displayName_pt_BR": "Título",
+          "displayName_en_US": "Title",
+          "type": "content"
+        }
+      ],
+      "attributesForPreview": [
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "",
+              "value": "Default"
+            },
+            {
+              "key": "bar-assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "bar-balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "bar-energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "bar-light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "bar-stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "bar-calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "bar-positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "bar-royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "bar-dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "crn-list-item-avatar",
+      "text_pt_BR": "Item com avatar",
+      "text_en_US": "Avatar Item",
+      "class": "adjust-icon mdi mdi-view-list",
+      "wrapper": true,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/item.avatar.template.html",
+      "forcedGroup":true,
+      "properties": {
+        "xattr-position": {
+          "displayName": "Position"
+        },
+        "href": {
+          "removable": false,
+          "type": "projectResource",
+          "resourceType": "text/html"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "item-avatar-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "item-avatar-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        },
+        {
+          "name": "xattr-text-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "text-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "text-center",
+              "value": "Center",
+              "icon": "mdi mdi-ray-vertex"
+            },
+            {
+              "key": "text-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        },
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        }
+      ],
+      "childrenProperties":[
+        {
+          "name":"src",
+          "selector":"img",
+          "removable": false,
+          "type": "projectResource",
+          "resourceType": "image/jpeg,image/gif,image/png"
+        },
+        {
+          "name":"content",
+          "displayName_pt_BR": "Título",
+          "displayName_en_US": "Title",
+          "selector":"h2",
+          "type":"content"
+        },
+        {
+          "name":"xattr-theme",
+          "displayName_pt_BR": "Tema do Tìtulo",
+          "displayName_en_US": "Title theme",
+          "selector":"h2",
+          "type":"text"
+        },
+        {
+          "name":"content",
+          "displayName_pt_BR": "Subtítulo",
+          "displayName_en_US": "Subtitle",
+          "selector":"h3",
+          "type":"content"
+        },
+        {
+          "name":"xattr-theme",
+          "displayName_pt_BR": "Tema do Subtítulo",
+          "displayName_en_US": "Subtitle theme",
+          "selector":"h3",
+          "type":"text"
+        },
+        {
+          "name":"xattr-text-position",
+          "displayName_pt_BR": "Posição do Texto",
+          "displayName_en_US": "Text Position",
+          "selector":"div",
+          "type":"text"
+        },
+        {
+          "name": "on-drag",
+          "selector": "a",
+          "type": "event"
+        },
+        {
+          "name":"ng-click",
+          "selector":"a",
+          "type":"event"
+        },
+        {
+          "name":"on-tap",
+          "selector":"a",
+          "type":"event"
+        },
+        {
+          "name":"on-double-tap",
+          "selector":"a",
+          "type":"event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "a",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "a",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} a",
+          "text_pt_BR": "Geral",
+          "text_en_US": "General"
+        },
+        {
+          "selector": "div#{id} h2",
+          "text_pt_BR": "Título",
+          "text_en_US": "Title"
+        },
+        {
+          "selector": "div#{id} h3",
+          "text_pt_BR": "Subtítulo",
+          "text_en_US": "Subtitle"
+        }
+      ]
+    },
+    {
+      "name": "crn-list-item-icon",
+      "text_pt_BR": "Item com ícone",
+      "text_en_US": "Item Icon",
+      "class": "adjust-icon mdi mdi-view-list",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/item.icon.template.html",
+      "properties": {
+        "xattr-position": {
+          "displayName": "Position"
+        },
+        "href": {
+          "removable": false,
+          "type": "projectResource",
+          "resourceType": "text/html"
+        },
+        "ng-click": {
+          "removable": false,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "item-icon-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "item-icon-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        },
+        {
+          "name": "xattr-icon-size",
+          "type": "options",
+          "target": "style",
+          "values": [
+            {
+              "key": "font-size:100%",
+              "value": "100%"
+            },
+            {
+              "key": "font-size:200%",
+              "value": "200%"
+            },
+            {
+              "key": "font-size:300%",
+              "value": "300%"
+            },
+            {
+              "key": "font-size:400%",
+              "value": "400%"
+            },
+            {
+              "key": "font-size:500%",
+              "value": "500%"
+            },
+            {
+              "key": "font-size:600%",
+              "value": "600%"
+            },
+            {
+              "key": "font-size:700%",
+              "value": "700%"
+            }
+          ]
+        },
+        {
+          "name": "xattr-text-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "text-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "text-center",
+              "value": "Center",
+              "icon": "mdi mdi-ray-vertex"
+            },
+            {
+              "key": "text-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        },
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        }
+      ],
+      "childrenProperties":[
+        {
+          "name":"content",
+          "selector":"h2",
+          "type":"content"
+        },
+        {
+          "name":"xattr-theme",
+          "selector":"h2",
+          "displayName_pt_BR": "Tema do conteúdo",
+          "displayName_en_US": "Content Theme",
+          "type":"text"
+        },
+        {
+          "name":"class",
+          "selector":"i",
+          "displayName_pt_BR": "Ícone",
+          "displayName_en_US": "Icon",
+          "type":"icon"
+        },
+        {
+          "name":"xattr-icon-size",
+          "selector":"i",
+          "displayName_pt_BR": "Tamanho do Ícone",
+          "displayName_en_US": "Icon Size"
+        },
+        {
+          "name":"xattr-theme",
+          "selector":"i",
+          "displayName_pt_BR": "Tema do ícone",
+          "displayName_en_US": "Icon Theme",
+          "type":"text"
+        },
+        {
+          "name":"xattr-text-position",
+          "displayName_pt_BR": "Posição do Texto",
+          "displayName_en_US": "Text Position",
+          "selector":"div",
+          "type":"text"
+        },
+        {
+          "name": "ng-click",
+          "selector": "a.item",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "a#{id} i",
+          "text_pt_BR": "Ícone",
+          "text_en_US": "Icon"
+        },
+        {
+          "selector": "a#{id} h2",
+          "text_pt_BR": "Descrição",
+          "text_en_US": "Description"
+        }
+      ]
+    },
+    {
+      "name": "crn-list-item-thumbnail",
+      "text_pt_BR": "Item com imagem",
+      "text_en_US": "Item Thumbnail",
+      "class": "adjust-icon mdi mdi-view-list",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/item.thumbnail.template.html",
+      "forcedGroup":true,
+      "properties": {
+        "xattr-position": {
+          "displayName": "Position"
+        },
+        "href": {
+          "removable": false,
+          "type": "projectResource",
+          "resourceType": "text/html"
+        },
+        "ng-click": {
+          "removable": false,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "item-thumbnail-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "item-thumbnail-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        },
+        {
+          "name": "xattr-text-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "text-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "text-center",
+              "value": "Center",
+              "icon": "mdi mdi-ray-vertex"
+            },
+            {
+              "key": "text-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        },
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        }
+      ],
+      "childrenProperties":[
+        {
+          "name":"src",
+          "selector":"img",
+          "removable": false,
+          "type": "projectResource",
+          "resourceType": "image/jpeg,image/gif,image/png"
+        },
+        {
+          "name":"content",
+          "selector":"h2",
+          "type":"content"
+        },
+        {
+          "name":"xattr-theme",
+          "displayName_pt_BR": "Tema",
+          "displayName_en_US": "Text Theme",
+          "selector":"h2",
+          "type":"text"
+        },
+        {
+          "name":"xattr-text-position",
+          "displayName_pt_BR": "Posição do Texto",
+          "displayName_en_US": "Text Position",
+          "selector":"div",
+          "type":"text"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "a#{id} h2",
+          "text_pt_BR": "Descrição",
+          "text_en_US": "Description"
+        }
+      ]
+    },
+    {
+      "name": "crn-toggle",
+      "text_pt_BR": "Alternância",
+      "text_en_US": "Toggle",
+      "class": "adjust-icon mdi mdi-toggle-switch-off",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/toggle.template.html",
+      "childrenProperties": [
+        {
+          "name": "ng-model",
+          "selector": "input",
+          "type": "text"
+        },
+        {
+          "name": "content",
+          "selector": "span",
+          "type": "content"
+        },
+        {
+          "name": "xattr-theme",
+          "selector": "div:first",
+          "type":"options"
+        },
+        {
+          "name": "ng-click",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-tap",
+          "selector": "label",
+          "type": "event"
+        }
+      ],
+      "attributesForPreview": [
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "toggle-assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "toggle-balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "toggle-energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "toggle-light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "toggle-stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "toggle-calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "toggle-positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "toggle-royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "toggle-dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} label",
+          "text_pt_BR": "Descrição",
+          "text_en_US": "Description"
+        },
+        {
+          "selector": "div#{id} .track",
+          "text_pt_BR": "Fundo do Botão de AlternÂncia",
+          "text_en_US": "Toggle Button Background"
+        },
+        {
+          "selector": "div#{id} .handle",
+          "text_pt_BR": "Botão de Alternância",
+          "text_en_US": "Toggle Button"
+        }
+      ]
+    },
+    {
+      "name": "crn-list-simple",
+      "text_pt_BR": "Lista Simples",
+      "text_en_US": "Simple List",
+      "wrapper": false,
+      "forcedGroup":true,
+      "class": "adjust-icon mdi mdi-view-sequential",
+      "template": "<div class=\"\" crn-datasource=\"\" ng-repeat=\"rowData in datasource.data\" ><ion-item  class=\"item dark text-left\" data-component=\"crn-list-item\" xattr-theme=\"dark\" xattr-text-position=\"text-left\" data-replace=\"true\">Item 1</ion-item></div>",
+      "properties": {
+        "crn-datasource": {
+          "name": "crn-datasource",
+          "displayName_pt_BR": "Fonte de dados",
+          "displayName_en_US": "Datasource",
+          "type":"pageDatasource",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        },
+        "href": {
+          "removable": false,
+          "type": "projectResource",
+          "resourceType": "text/html"
+        },
+        "ng-click": {
+          "removable": false,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "childrenProperties":[
+        {
+          "name":"content",
+          "selector":"ion-item",
+          "type":"content"
+        },
+        {
+          "name":"xattr-theme",
+          "displayName_pt_BR": "Tema",
+          "displayName_en_US": "Text Theme",
+          "selector":"ion-item",
+          "type":"text"
+        },
+        {
+          "name":"xattr-text-position",
+          "displayName_pt_BR": "Posição do Texto",
+          "displayName_en_US": "Text Position",
+          "selector":"ion-item",
+          "type":"text"
+        }
+      ],
+      "attributesForPreview": [
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        },
+        {
+          "name": "xattr-text-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "text-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "text-center",
+              "value": "Center",
+              "icon": "mdi mdi-ray-vertex"
+            },
+            {
+              "key": "text-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        }
+      ],
+      "styles":[
+        {
+          "selector": "#{id} ion-item",
+          "text_pt_BR": "Conteúdo",
+          "text_en_US": "Content"
+        }
+      ]
+    },
+    {
+      "name": "crn-list-avatar",
+      "text_pt_BR": "Lista com avatar",
+      "text_en_US": "Avatar List",
+      "class": "adjust-icon mdi mdi-view-list",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/list.avatar.template.html",
+      "forcedGroup":true,
+      "properties": {
+        "crn-datasource": {
+          "name": "crn-datasource",
+          "displayName_pt_BR": "Fonte de dados",
+          "displayName_en_US": "Datasource",
+          "type":"pageDatasource",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "item-avatar-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "item-avatar-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        },
+        {
+          "name": "xattr-text-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "text-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "text-center",
+              "value": "Center",
+              "icon": "mdi mdi-ray-vertex"
+            },
+            {
+              "key": "text-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        },
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        }
+      ],
+      "childrenProperties":[
+        {
+          "name":"src",
+          "selector":"img",
+          "removable": false,
+          "type": "projectResource",
+          "resourceType": "image/jpeg,image/gif,image/png"
+        },
+        {
+          "name":"xattr-position",
+          "displayName_pt_BR": "Posição da Imagem",
+          "displayName_en_US": "Image Position",
+          "selector":"div:first",
+          "type":"text"
+        },
+        {
+          "name":"content",
+          "displayName_pt_BR": "Título",
+          "displayName_en_US": "Title",
+          "selector":"h2",
+          "type":"content"
+        },
+        {
+          "name":"xattr-theme",
+          "displayName_pt_BR": "Tema do Tìtulo",
+          "displayName_en_US": "Title theme",
+          "selector":"h2",
+          "type":"text"
+        },
+        {
+          "name":"content",
+          "displayName_pt_BR": "Subtítulo",
+          "displayName_en_US": "Subtitle",
+          "selector":"h3",
+          "type":"content"
+        },
+        {
+          "name":"xattr-theme",
+          "displayName_pt_BR": "Tema do Subtítulo",
+          "displayName_en_US": "Subtitle theme",
+          "selector":"h3",
+          "type":"text"
+        },
+        {
+          "name":"xattr-text-position",
+          "displayName_pt_BR": "Posição do Texto",
+          "displayName_en_US": "Text Position",
+          "selector":"div > div",
+          "type":"text"
+        },
+        {
+          "name": "ng-click",
+          "selector": "a",
+          "type": "event"
+        },
+        {
+          "name": "on-tap",
+          "selector": "a",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "a",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "a",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "a",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "a",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} a",
+          "text_pt_BR": "Geral",
+          "text_en_US": "General"
+        },
+        {
+          "selector": "div#{id} h2",
+          "text_pt_BR": "Título",
+          "text_en_US": "Title"
+        },
+        {
+          "selector": "div#{id} h3",
+          "text_pt_BR": "Subtítulo",
+          "text_en_US": "Subtitle"
+        }
+      ]
+    },
+    {
+      "name": "crn-list-icon",
+      "text_pt_BR": "Lista com ícone",
+      "text_en_US": "Icon List",
+      "class": "adjust-icon mdi mdi-view-list",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/list.icon.template.html",
+      "forcedGroup":true,
+      "properties": {
+        "crn-datasource": {
+          "name": "crn-datasource",
+          "displayName_pt_BR": "Fonte de dados",
+          "displayName_en_US": "Datasource",
+          "type":"pageDatasource",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "item-icon-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "item-icon-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        },
+        {
+          "name": "xattr-text-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "text-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "text-center",
+              "value": "Center",
+              "icon": "mdi mdi-ray-vertex"
+            },
+            {
+              "key": "text-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        },
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        }
+      ],
+      "childrenProperties":[
+        {
+          "name":"content",
+          "selector":"h2",
+          "type":"content"
+        },
+        {
+          "name":"xattr-theme",
+          "selector":"h2",
+          "displayName_pt_BR": "Tema do conteúdo",
+          "displayName_en_US": "Content Theme",
+          "type":"text"
+        },
+        {
+          "name":"xattr-text-position",
+          "displayName_pt_BR": "Posição do Texto",
+          "displayName_en_US": "Text Position",
+          "selector":"div > div",
+          "type":"text"
+        },
+        {
+          "name":"class",
+          "selector":"i",
+          "displayName_pt_BR": "Ícone",
+          "displayName_en_US": "Icon",
+          "type":"icon"
+        },
+        {
+          "name":"xattr-theme",
+          "selector":"i",
+          "displayName_pt_BR": "Tema do ícone",
+          "displayName_en_US": "Icon Theme",
+          "type":"text"
+        },
+        {
+          "name":"xattr-position",
+          "selector":"div:first",
+          "displayName_pt_BR": "Posição do Ícone",
+          "displayName_en_US": "Icon Position",
+          "type":"text"
+        },
+        {
+          "name": "ng-click",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-tap",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "div",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} i",
+          "text_pt_BR": "Ícone",
+          "text_en_US": "Icon"
+        },
+        {
+          "selector": "div#{id} h2",
+          "text_pt_BR": "Descrição",
+          "text_en_US": "Description"
+        }
+      ]
+    },
+    {
+      "name": "crn-list-thumbnail",
+      "text_pt_BR": "Listas com imagem",
+      "text_en_US": "List Thumbnail",
+      "class": "adjust-icon mdi mdi-view-list",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/list.thumbnail.template.html",
+      "forcedGroup":true,
+      "properties": {
+        "crn-datasource": {
+          "name": "crn-datasource",
+          "displayName_pt_BR": "Fonte de dados",
+          "displayName_en_US": "Datasource",
+          "type":"pageDatasource",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        },
+        "ng-click": {
+          "removable": false,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "item-thumbnail-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "item-thumbnail-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        },
+        {
+          "name": "xattr-text-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "text-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "text-center",
+              "value": "Center",
+              "icon": "mdi mdi-ray-vertex"
+            },
+            {
+              "key": "text-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        },
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        }
+      ],
+      "childrenProperties":[
+        {
+          "name":"src",
+          "selector":"img",
+          "removable": false,
+          "type": "projectResource",
+          "resourceType": "image/jpeg,image/gif,image/png"
+        },
+        {
+          "name":"xattr-position",
+          "selector":"div",
+          "type": "text"
+        },
+        {
+          "name":"content",
+          "selector":"h2",
+          "type":"content"
+        },
+        {
+          "name":"xattr-theme",
+          "displayName_pt_BR": "Tema",
+          "displayName_en_US": "Text Theme",
+          "selector":"h2",
+          "type":"text"
+        },
+        {
+          "name":"xattr-text-position",
+          "displayName_pt_BR": "Posição do Texto",
+          "displayName_en_US": "Text Position",
+          "selector":"div",
+          "type":"text"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} h2",
+          "text_pt_BR": "Descrição",
+          "text_en_US": "Description"
+        }
+      ]
+    },
+    {
+      "name": "crn-list",
+      "text_pt_BR": "Lista",
+      "text_en_US": "List",
+      "class": "adjust-icon mdi mdi-view-headline",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/list.template.html",
+      "childrenProperties": [
+        {
+          "name": "crn-datasource",
+          "selector": "div[crn-datasource]",
+          "displayName_pt_BR": "Fonte de Dados",
+          "displayName_en_US": "Datasource",
+          "type": "pageDatasource"
+        },
+        {
+          "name": "ng-click",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-tap",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "div",
+          "type": "event"
+        }
+      ],
+      "properties": {
+        "onclick": {
+          "type": "event"
+        }
+      },
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "<ion-item  class=\"item\">Item 1</ion-item>",
+            "targetSelector": ".list"
+          }
+        ]
+      },
+      "styles":[
+        {
+          "selector": "#{id} ion-item",
+          "text_pt_BR": "Conteúdo",
+          "text_en_US": "Content"
+        }
+      ]
+    },
+    {
+      "name": "crn-list-item",
+      "text_pt_BR": "Item",
+      "text_en_US": "Item",
+      "wrapper": false,
+      "class": "adjust-icon mdi mdi-view-sequential",
+      "template": "<ion-item  class=\"item dark text-left\" xattr-theme=\"dark\" xattr-text-position=\"text-left\" data-replace=\"true\">Item 1</ion-item>",
+      "properties": {
+        "xattr-theme": {
+          "displayName": "Theme"
+        },
+        "xattr-text-position": {
+          "displayName": "Position"
+        },
+        "ng-click": {
+          "removable": false,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        },
+        {
+          "name": "xattr-text-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "text-left",
+              "value": "Left",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "text-center",
+              "value": "Center",
+              "icon": "mdi mdi-ray-vertex"
+            },
+            {
+              "key": "text-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "crn-select",
+      "text_pt_BR": "Caixa de seleção",
+      "text_en_US": "Combobox",
+      "class": "adjust-icon mdi mdi-equal-box",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/combobox.template.html",
+      "properties": {
+        "ng-click": {
+          "removable": false,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "childrenProperties": [
+        {
+          "name": "ng-model",
+          "selector": "select",
+          "type": "allDatasourceFields",
+          "onSave": "javascript:function() {var result = arguments[0]; if (result.indexOf('.') == -1 && result.trim().length > 0 ) { result = 'vars.'+result;  }  return result; }",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        },
+        {
+          "name": "content",
+          "selector": "div",
+          "type": "content"
+        }
+      ],
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "<option value=\"${RANDOM}\" class=\"\">Value ${RANDOM}</option>",
+            "targetSelector": "select"
+          }
+        ]
+      },
+      "styles": [
+        {
+          "selector": "label#{id} div",
+          "order": 99999,
+          "text_pt_BR": "Item Selecionado",
+          "text_en_US": "Selected Item"
+        },
+        {
+          "selector": "label#{id} select",
+          "text_pt_BR": "Dropdown",
+          "text_en_US": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "crn-select-options",
+      "text": "Select",
+      "pallete": false,
+      "class": "adjust-icon mdi mdi-equal-box",
+      "wrapper": true,
+      "template": "<div> select class=\"selectTeste\"> <option>Blue</option> <option selected>Green</option> <option>Red</option> </select> </div>",
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": " <option class=\"\"> Option</option>",
+            "targetSelector": ".selectTeste"
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-dynamic-select",
+      "text_pt_BR": "Caixa de seleção Dinâmica",
+      "text_en_US": "Dynamic Combobox",
+      "class": "adjust-icon mdi mdi-equal-box",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/dynamic-combobox.template.html",
+      "properties": {
+        "ng-click": {
+          "removable": false,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "childrenProperties": [
+        {
+          "name": "content",
+          "selector": "span",
+          "type":"content"
+        },
+        {
+          "name": "crn-datasource",
+          "selector": "select",
+          "displayName_pt_BR": "Fonte de dados",
+          "displayName_en_US": "Datasource",
+          "type":"pageDatasource",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        },
+        {
+          "name": "ng-model",
+          "selector": "select",
+          "displayName_pt_BR": "Campo",
+          "displayName_en_US": "Field",
+          "type": "allDatasourceFields",
+          "onSave": "javascript:function() {var result = arguments[0]; if (result.indexOf('.') == -1 && result.trim().length > 0 ) { result = 'vars.'+result;  }  return result; }",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        },
+        {
+          "name": "xkey-field",
+          "selector": "select",
+          "displayName_pt_BR": "Campo Chave",
+          "displayName_en_US": "Key Field",
+          "type": "datasourceFieldList"
+        },
+        {
+          "name": "xdisplay-field",
+          "selector": "select",
+          "displayName_pt_BR": "Campo Texto",
+          "displayName_en_US": "Display Field",
+          "type": "datasourceFieldList"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "label#{id}",
+          "text_pt_BR": "Geral",
+          "text_en_US": "General"
+        },
+        {
+          "selector": "label#{id} span",
+          "text_pt_BR": "Label",
+          "text_en_US": "Label"
+        },
+        {
+          "selector": "label#{id} select",
+          "text_pt_BR": "Dropdown",
+          "text_en_US": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "crn-multiselect",
+      "text_pt_BR": "Seleção Multipla",
+      "text_en_US": "Multiselect",
+      "class": "adjust-icon mdi mdi-equal-box",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/multiselect.template.html",
+        "properties": {
+        "ng-click": {
+          "removable": false,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "childrenProperties": [
+        {
+          "name": "crn-datasource",
+          "selector": "select",
+          "displayName_pt_BR": "Fonte de dados",
+          "displayName_en_US": "Datasource",
+          "type":"pageDatasource",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        },
+        {
+          "name": "ng-model",
+          "selector": "select",
+          "displayName_pt_BR": "Campo",
+          "displayName_en_US": "Field",
+          "type": "allDatasourceFields",
+          "onSave": "javascript:function() {var result = arguments[0]; if (result.indexOf('.') == -1 && result.trim().length > 0 ) { result = 'vars.'+result;  }  return result; }",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        },
+        {
+          "name": "xkey-field",
+          "selector": "select",
+          "displayName_pt_BR": "Campo Chave",
+          "displayName_en_US": "Key Field",
+          "type": "datasourceFieldList"
+        },
+        {
+          "name": "xdisplay-field",
+          "selector": "select",
+          "displayName_pt_BR": "Campo Texto",
+          "displayName_en_US": "Display Field",
+          "type": "datasourceFieldList"
+        }
+      ],
+      "groupedChildren": [
+        {
+          "text_pt_BR": "Conteúdo",
+          "text_en_US": "Content",
+          "selector": "span"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "label#{id} span",
+          "text_pt_BR": "Label",
+          "text_en_US": "Label"
+        },
+        {
+          "selector": "label#{id} select",
+          "text_pt_BR": "Dropdown",
+          "text_en_US": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "crn-textarea",
+      "text_pt_BR": "Área de texto",
+      "text_en_US": "Textarea",
+      "class": "adjust-icon mdi mdi-textbox",
+      "wrapper":false,
+      "template": "<textarea id=\"textArea${RANDOM}\" ng-model=\"vars.textarea${RANDOM}\" maxlength=\"300\" style=\"resize:none;\" resize=\"none\"class=\"col item item-input\" rows=\"5\" placeholder=\"Textarea component\"></textarea>",
+      "properties": {
+        "ng-model": {
+          "onSave": "javascript:function() { var result = arguments[0]; if (result.indexOf('.') == -1) { result = 'vars.'+result;  }  return result; }",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        },
+        "ng-keydown": {
+          "type": "event"
+        },
+        "ng-keypress": {
+          "type": "event"
+        },
+        "ng-focus": {
+          "type": "event"
+        },
+        "ng-blur": {
+          "type": "event"
+        }
+      },
+      "rows": {
+        "displayName": "rows"
+      },
+      "attributesForPreview": [
+        {
+          "name": "resize",
+          "type": "options",
+          "target": "style",
+          "values": [
+            {
+              "key": "resize:none;",
+              "value": "None"
+            },
+            {
+              "key": "resize:horizontal;",
+              "value": "Horizontal"
+            },
+            {
+              "key": "resize:vertical;",
+              "value": "Vertical"
+            },
+            {
+              "key": "resize:both;",
+              "value": "Both "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "crn-search",
+      "text_pt_BR": "Filtro",
+      "text_en_US": "Filter",
+      "class": "adjust-icon mdi mdi-magnify",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/search.template.html",
+      "properties": {
+        "crn-datasource": {
+          "displayName_pt_BR": "Fonte de dados",
+          "displayName_en_US": "Datasource",
+          "removable": false,
+          "type": "pageDatasource",
+          "selector": "input",
+          "childrenProperty": true
+        },
+        "cronapp-filter-caseinsensitive":  {
+          "removable": false,
+          "type": "logic",
+          "selector": "input",
+          "childrenProperty": true
+        },
+        "cronapp-filter-autopost": {
+          "removable": false,
+          "type": "logic",
+          "selector": "input",
+          "childrenProperty": true
+        },
+        "cronapp-filter-operator": {
+          "removable": false,
+          "type": "list",
+          "options": [
+            {
+              "value": "=",
+              "key": "="
+            },
+            {
+              "value": ">",
+              "key": ">"
+            },
+            {
+              "value": ">=",
+              "key": ">="
+            },
+            {
+              "value": "<",
+              "key": "<"
+            },
+            {
+              "value": "<=",
+              "key": "<="
+            }
+          ],
+          "selector": "input",
+          "childrenProperty": true
+        }
+      },
+      "groupedChildren": [
+        {
+          "text_pt_BR": "Campo",
+          "text_en_US": "Field",
+          "selector": "input"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} label",
+          "text_pt_BR": "Geral",
+          "text_en_US": "General"
+        },
+        {
+          "selector": "div#{id} input",
+          "text_pt_BR": "Entrada de Texto",
+          "text_en_US": "Text Input"
+        },
+        {
+          "selector": "div#{id} i",
+          "text_pt_BR": "Ícone",
+          "text_en_US": "Icon"
+        }
+      ],
+      "childrenProperties": [
+        {
+          "name": "ng-keydown",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-keyup",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-click",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-focus",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-blur",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "input",
+          "type": "event"
+        }
+      ]
+    },
+    {
+      "name": "crn-complex-search",
+      "text_pt_BR": "Filtro Complexo",
+      "text_en_US": "Complex Filter",
+      "class": "adjust-icon mdi mdi-filter",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/complexsearch.template.html",
+      "styles": [
+        {
+          "selector": "div#{id} .button",
+          "text_pt_BR": "Botão do Filtro",
+          "text_en_US": "Filter Button"
+        },
+        {
+          "selector": "div#{id} .button i ",
+          "text_pt_BR": "Ícone do Botão",
+          "text_en_US": "Button Icon"
+        },
+        {
+          "selector": "div#{id} .button span",
+          "text_pt_BR": "Descrição do Botão",
+          "text_en_US": "Button Description"
+        },
+        {
+          "selector": "div#{id} label",
+          "text_pt_BR": "Entrada de Texto",
+          "text_en_US": "Text Input"
+        },
+        {
+          "selector": "div#{id} label i",
+          "text_pt_BR": "Ícone da Entrada de Texto",
+          "text_en_US": "Input Icon"
+        }
+      ]
+    },
+    {
+      "name": "crn-filter-button",
+      "text_pt_BR": "Botão do Filtro",
+      "text_en_US": "Filter Button",
+      "class": "adjust-icon mdi mdi-stop",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/filterbutton.template.html",
+      "properties": {
+        "crn-datasource": {
+          "displayName_pt_BR": "Fonte de dados",
+          "displayName_en_US": "Datasource",
+          "removable": false,
+          "type": "pageDatasource"
+        },
+        "cronapp-filter-caseinsensitive": {
+          "removable": false,
+          "type": "logic",
+          "selector": "input",
+          "childrenProperty": true
+        },
+        "ng-click": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-tap": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-double-tap": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-hold": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-drag": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-swipe": {
+          "removable": true,
+          "type": "event"
+        },
+        "xattr-fullsize": {
+          "displayName": "Width"
+        },
+        "xattr-theme": {
+          "displayName": "Theme"
+        },
+        "xattr-type": {
+          "displayName": "Style Type"
+        },
+        "xattr-size": {
+          "displayName": "Size"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-size",
+          "type": "options",
+          "selector": "div",
+          "target": "class",
+          "values": [
+            {
+              "key": "",
+              "value": "Standard"
+            },
+            {
+              "key": "button-large",
+              "value": "Large"
+            },
+            {
+              "key": "button-small",
+              "value": "Small"
+            }
+          ]
+        },
+        {
+          "name": "crn-datasource",
+          "type": "pageDatasource",
+          "target": "button"
+        },
+        {
+          "name": "xattr-type",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "",
+              "value": "Default"
+            },
+            {
+              "key": "button-clear",
+              "value": "Clear"
+            },
+            {
+              "key": "button-outline",
+              "value": "Outline"
+            }
+          ]
+        },
+        {
+          "name": "xattr-fullsize",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "button-block",
+              "value": "Block"
+            },
+            {
+              "key": "",
+              "value": "Inline"
+            },
+            {
+              "key": "button-full",
+              "value": "Full Width"
+            }
+          ]
+        },
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "",
+              "value": "Default"
+            },
+            {
+              "key": "button-assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "button-balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "button-energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "button-light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "button-stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "button-calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "button-positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "button-royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "button-dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        },
+        {
+          "name": "required-filter",
+          "type": "options",
+          "target": "required-filter",
+          "values": [
+            {
+              "key": "true",
+              "value": "Sim"
+            },
+            {
+              "key": "false",
+              "value": "Não"
+            }
+          ]
+        },
+        {
+          "name": "xattr-icon-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "",
+              "value": "Default"
+            },
+            {
+              "key": "assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        }
+      ],
+      "childrenProperties": [
+        {
+          "name": "class",
+          "selector": "i",
+          "displayName_pt_BR": "Ícone",
+          "displayName_en_US": "Icon",
+          "type": "icon"
+        },
+        {
+          "name": "xattr-icon-theme",
+          "selector": "i",
+          "displayName_pt_BR": "Tema do ícone",
+          "displayName_en_US": "Icon Theme",
+          "type": "text"
+        },
+        {
+          "name": "content",
+          "selector": "span",
+          "type": "content"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "button#{id}",
+          "text_pt_BR": "Botão",
+          "text_en_US": "Button"
+        },
+        {
+          "selector": "button#{id} i",
+          "text_pt_BR": "Ícone",
+          "text_en_US": "Icon"
+        },
+        {
+          "selector": "button#{id} span",
+          "text_pt_BR": "Descrição",
+          "text_en_US": "Description"
+        }
+      ]
+    },
+    {
+      "name": "crn-range",
+      "text_pt_BR": "Alcance",
+      "text_en_US": "Range",
+      "class": "adjust-icon mdi mdi-toggle-switch",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/range.template.html",
+      "childrenProperties": [
+        {
+          "name": "class",
+          "selector": "i:first",
+          "type": "icon",
+          "displayName_pt_BR": "Ícone inicial",
+          "displayName_en_US": "First Icon"
+        },
+        {
+          "name": "class",
+          "selector": "i:last",
+          "type": "icon",
+          "displayName_pt_BR": "Ícone final",
+          "displayName_en_US": "Last Icon"
+        },
+        {
+          "name": "ng-model",
+          "selector": "input",
+          "type": "text"
+        },
+        {
+          "name": "max",
+          "selector": "input",
+          "type": "text"
+        },
+        {
+          "name": "min",
+          "selector": "input",
+          "type": "text"
+        },
+        {
+          "name": "on-drag",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-click",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-tap",
+          "selector": "input",
+          "type": "event"
+        },
+		{
+          "name":"ng-change",
+          "selector": "input",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} .item",
+          "text_pt_BR": "Geral",
+          "text_en_US": "General"
+        },
+        {
+          "selector": "div#{id} input",
+          "text_pt_BR": "Alcance",
+          "text_en_US": "Range"
+        },
+        {
+          "selector": "div#{id} i.left-icon",
+          "text_pt_BR": "Ícone Esquerdo",
+          "text_en_US": "Left Icon"
+        },
+        {
+          "selector": "div#{id} i.right-icon",
+          "text_pt_BR": "Ícone Direito",
+          "text_en_US": "Right Icon"
+        }
+      ]
+    },
+    {
+      "name": "crn-input",
+      "text_pt_BR": "Entrada de texto",
+      "text_en_US": "Input",
+      "class": "adjust-icon mdi mdi-label-outline",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/textinput.template.html",
+      "childrenProperties": [
+        {
+          "name": "placeholder",
+          "selector": "input[placeholder]",
+          "displayName_pt_BR": "Sugestão",
+          "displayName_en_US": "Placeholder",
+          "type":"text"
+        },
+        {
+          "name": "ng-model",
+          "selector": "input[ng-model]",
+          "displayName_pt_BR": "Campo",
+          "displayName_en_US": "Field",
+          "type":"text"
+        },
+        {
+          "name": "type",
+          "selector": "input[type]",
+          "type":"inputType"
+        },
+        {
+          "name": "ng-keydown",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-keyup",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-click",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-focus",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-blur",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "input",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "label#{id} input",
+          "text_pt_BR": "Entrada",
+          "text_en_US": "Input"
+        }
+      ]
+    },
+    {
+      "name": "crn-input-floating",
+      "text_pt_BR": "Entrada de texto flutuante",
+      "text_en_US": "Float Input",
+      "class": "adjust-icon mdi mdi-label-outline",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/floattextinput.template.html",
+      "childrenProperties": [
+        {
+          "name": "content",
+          "selector": "span",
+          "type": "content",
+          "displayName_pt_BR": "Conteúdo",
+          "displayName_en_US": "Label"
+        },
+        {
+          "name": "placeholder",
+          "selector": "input[placeholder]",
+          "type":"text"
+        },
+        {
+          "name": "ng-model",
+          "selector": "input[ng-model]",
+          "type":"text"
+        },
+        {
+          "name": "type",
+          "selector": "input[type]",
+          "type":"inputType"
+        },
+        {
+          "name": "ng-keydown",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-keyup",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-click",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-focus",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-blur",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "input",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "label#{id} input",
+          "text_pt_BR": "Entrada",
+          "text_en_US": "Input"
+        },
+        {
+          "selector": "label#{id} span",
+          "text_pt_BR": "Label",
+          "text_en_US": "Label"
+        }
+      ]
+    },
+    {
+      "name": "crn-input-inline",
+      "text_pt_BR": "Entrada de texto em linha",
+      "text_en_US": "Inline Input",
+      "class": "adjust-icon mdi mdi-label-outline",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/inlinetextinput.template.html",
+      "childrenProperties": [
+        {
+          "name": "content",
+          "selector": "span",
+          "type": "content",
+          "displayName_pt_BR": "Rótulo",
+          "displayName_en_US": "Label"
+        },
+        {
+          "name": "placeholder",
+          "selector": "input[placeholder]",
+          "type":"text"
+        },
+        {
+          "name": "ng-model",
+          "selector": "input[ng-model]",
+          "type":"text"
+        },
+        {
+          "name": "type",
+          "selector": "input[type]",
+          "type":"inputType"
+        },
+		{
+          "name": "ng-keydown",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-keydown",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-keyup",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-click",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-focus",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-blur",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "input",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "label#{id} input",
+          "text_pt_BR": "Entrada",
+          "text_en_US": "Input"
+        },
+        {
+          "selector": "label#{id} span",
+          "text_pt_BR": "Label",
+          "text_en_US": "Label"
+        }
+      ]
+    },
+    {
+      "name": "crn-input-icon",
+      "text_pt_BR": "Entrada de texto com ícone",
+      "text_en_US": "Icon Input",
+      "class": "adjust-icon mdi mdi-label-outline",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/icontextinput.template.html",
+      "childrenProperties": [
+        {
+          "name": "class",
+          "displayName_pt_BR": "Ícone",
+          "displayName_en_US": "Icon",
+          "selector": "i",
+          "type": "icon"
+        },
+        {
+          "name": "placeholder",
+          "selector": "input[placeholder]",
+          "type": "text"
+        },
+        {
+          "name": "ng-model",
+          "selector": "input[ng-model]",
+          "type": "text"
+        },
+        {
+          "name": "type",
+          "selector": "input[type]",
+          "type":"inputType"
+        },
+        {
+          "name": "ng-keydown",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-keyup",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-click",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-focus",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-blur",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "input",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "label#{id} input",
+          "text_pt_BR": "Entrada",
+          "text_en_US": "Input"
+        },
+        {
+          "selector": "label#{id} i",
+          "text_pt_BR": "Ícone",
+          "text_en_US": "Icon"
+        }
+      ]
+    },
+    {
+      "name": "crn-radio",
+      "text_pt_BR": "Lista de opção",
+      "text_en_US": "Radio Group",
+      "class": "adjust-icon mdi mdi-radiobox-marked",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/radiogroup.template.html",
+      "properties": {
+        "ng-model": {
+          "onSave": "javascript:function() { var result = arguments[0]; if (result.indexOf('.') == -1 && result.trim().length > 0 ) { result = 'vars.'+result;  }  return result; }",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        }
+      },
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "<div data-component=\"crn-radioOption\"><label class=\"item item-radio\" crn-value=\"\" value=\"${RANDOM}\"><input type=\"radio\" name=\"group\"><div class=\"radio-content\"><div class=\"item-content\"> Choose Other </div><i class=\"radio-icon ion-checkmark\"></i></div></label><div>",
+            "targetSelector": ":self"
+          }
+        ]
+      },
+      "styles": [
+        {
+          "selector": "div#{id} .item-divider",
+          "text_pt_BR": "Título",
+          "text_en_US": "Title"
+        },
+        {
+          "selector": "div#{id} .item-content",
+          "text_pt_BR": "Opção",
+          "text_en_US": "Option"
+        },
+        {
+          "selector": "div#{id} .ion-checkmark",
+          "text_pt_BR": "Marcador",
+          "text_en_US": "Checkmark"
+        }
+      ],
+      "childrenProperties": [
+        {
+          "name": "ng-click",
+          "selector": "label",
+          "type": "event"
+        },
+        {
+          "name": "on-tap",
+          "selector": "label",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "label",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "label",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "label",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "label",
+          "type": "event"
+        }
+      ]
+    },
+    {
+      "name": "crn-radioOption",
+      "pallete": false,
+      "childrenProperties": [
+        {
+          "name": "value",
+          "selector": "label[value]",
+          "displayName_pt_BR": "Valor do campo",
+          "displayName_en_US": "Field value",
+          "type": "text"
+        },
+        {
+          "name": "content",
+          "selector": "div.item-content",
+          "displayName_pt_BR": "Valor de exibição",
+          "displayName_en_US": "Text value",
+          "type": "text",
+          "onDisplay": "javascript:function() { return arguments[0].trim(); }"
+        }
+      ]
+    },
+    {
+      "name": "crn-checkbox",
+      "text_pt_BR": "Caixa de checagem",
+      "text_en_US": "Checkbox",
+      "class": "adjust-icon mdi mdi-checkbox-marked-outline",
+      "wrapper": true,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/checkbox.template.html",
+      "childrenProperties":[
+        {
+          "name": "ng-model",
+          "selector": "input",
+          "type":"text"
+        },
+        {
+          "name": "content",
+          "selector": "span",
+          "type":"content"
+        },
+        {
+          "name": "ng-click",
+          "selector": "ul",
+          "type": "event"
+        },
+        {
+          "name": "on-tap",
+          "selector": "ul",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "ul",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "ul",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "ul",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "ul",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} li",
+          "text_pt_BR": "Geral",
+          "text_en_US": "General"
+        },
+        {
+          "selector": "div#{id} span",
+          "text_pt_BR": "Legenda",
+          "text_en_US": "Caption"
+        }
+      ]
+    },
+    {
+      "name": "crn-spacer",
+      "text_pt_BR": "Espaço",
+      "text_en_US": "Spacer",
+      "class": " adjust-icon mdi mdi-file-presentation-box",
+      "wrapper": false,
+      "template": "<div style= \"height: 100px;\">&nbsp;</div>"
+    },
+    {
+      "name": "crn-video",
+      "text": "Video",
+      "class": "adjust-icon mdi mdi-youtube-play",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/video.template.html",
+      "forceGroup" : true,
+      "wrapper": false,
+      "groupedChildren": [
+        {
+          "text_pt_BR": "Imagem",
+          "text_en_US": "Image",
+          "selector": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "crn-map",
+      "text_pt_BR": "Mapa",
+      "text_en_US": "Map",
+      "class": " adjust-icon mdi mdi-google-maps",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/maps.template.html"
+    },
+    {
+      "name": "crn-slider",
+      "text_pt_BR": "Carrossel",
+      "text_en_US": "Carousel",
+      "class": "adjust-icon mdi mdi-view-carousel",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/slider.template.html",
+      "forcedGroup": true,
+      "wrapper": false,
+      "properties": {
+        "xattr-collapse": {
+          "displayName": "Collapse"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-collapse",
+          "type": "btngroup",
+          "value": "true",
+          "values": [
+            {
+              "key": "true",
+              "value": "true"
+            },
+            {
+              "key": "false",
+              "value": "false"
+            }
+          ]
+        }
+      ],
+      "classForPreview": {
+        "targetSelector": ".crn-slider",
+        "condition": [
+          {
+            "name": "xattr-collapse",
+            "value": "true",
+            "class": "hide-ion-slider"
+          },
+          {
+            "name": "xattr-collapse",
+            "value": "false",
+            "class": ""
+          }
+        ]
+      },
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "activeClass": "",
+            "sourceHTML": "<ion-slide class=\"\" style = \" width:100%;height:100%;\"><div class=\"text-center\" style=\"display: table; width:100%;height:100%;min-height:200px; margin: 0 auto;\"><img src=\"http://placehold.it/400x220\" data-component=\"crn-image\" style=\"width:100%;height:100%; max-width: 100%; max-height: 100%; display: table-cell; vertical-align: middle;\" xattr-position=\"\"></div></ion-slide>",
+            "targetSelector": "ion-slide-box"
+          }
+        ]
+      },
+      "childrenProperties": [
+        {
+          "name": "auto-play",
+          "selector": "ion-slide-box[auto-play]",
+          "displayName_pt_BR": "Início automático",
+          "displayName_en_US": "Auto play"
+        },
+        {
+          "name": "slide-interval",
+          "selector": "ion-slide-box[slide-interval]",
+          "displayName_pt_BR": "Intervalo de transição",
+          "displayName_en_US": "Slide interval"
+        },
+        {
+          "name": "does-continue",
+          "selector": "ion-slide-box[does-continue]",
+          "displayName_pt_BR": "Reprodução contínua?",
+          "displayName_en_US": "Does continue?"
+        },
+        {
+          "name":"ng-click",
+          "selector":"div",
+          "type":"event"
+        },
+        {
+          "name": "on-tap",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe-left",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe-right",
+          "selector": "div",
+          "type": "event"
+        }
+      ]
+    },
+    {
+      "name": "crn-image",
+      "text_pt_BR": "Imagem",
+      "text_en_US": "Image",
+      "class": " adjust-icon mdi mdi-image",
+      "wrapper": false,
+      "template": "<img src=\"img/nophoto.png\" class=\"\" style=\"\"  xattr-position=\"\" >",
+      "properties": {
+        "src": {
+          "type": "projectResource",
+          "resourceType": "image/jpeg,image/gif,image/png"
+        },
+         "ng-click": {
+          "removable": false,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "left-block",
+              "value": "Standard",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "center-block",
+              "value": "Middle",
+              "icon": "mdi mdi-ray-vertex"
+            },
+            {
+              "key": "right-block",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "crn-card",
+      "text_pt_BR": "Cartão",
+      "text_en_US": "Card",
+      "class": "adjust-icon mdi mdi-crop-square",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/card.template.html",
+      "childrenProperties":[
+        {
+          "name":"content",
+          "selector":"div",
+          "type":"content"
+        },
+        {
+          "name":"ng-click",
+          "selector":"div",
+          "type":"event"
+        },
+        {
+          "name": "on-tap",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "div",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "div",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} div",
+          "text_pt_BR": "Geral",
+          "text_en_US": "General"
+        }
+      ]
+    },
+    {
+      "name": "crn-container",
+      "text_pt_BR": "Recipiente",
+      "text_en_US": "Container",
+      "class": "adjust-icon mdi mdi-select",
+      "wrapper": false,
+      "template": "<div data-replace=\"true\">&nbsp;</div>"
+    },
+    {
+      "name": "crn-heading",
+      "text_pt_BR": "Título",
+      "text_en_US": "Title",
+      "class": "adjust-icon mdi mdi-format-header-pound",
+      "wrapper": false,
+      "template": "<h1>Title</h1>",
+      "properties": {
+        "xattr-position": {
+          "displayName": "Position"
+        },
+        "ng-click": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": true,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": true,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": true,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": true,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": true,
+            "type": "event"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "text-left",
+              "value": "Standard",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "text-center",
+              "value": "Middle",
+              "icon": "mdi mdi-ray-vertex"
+            },
+            {
+              "key": "text-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "crn-icon",
+      "displayName": "icon",
+      "text_pt_BR": "Ícone",
+      "text_en_US": "Icon",
+      "class": "adjust-icon mdi mdi-star",
+      "template": "<i class=\"ion ion-star\" id=\"crn-icon${RANDOM}\" style=\"\" xattr-size=\"\"/>",
+      "wrapper": false,
+      "properties": {
+        "ng-click": {
+          "removable": false,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-size",
+          "type": "options",
+          "target": "style",
+          "values": [
+            {
+              "key": "font-size:100%",
+              "value": "100%"
+            },
+            {
+              "key": "font-size:200%",
+              "value": "200%"
+            },
+            {
+              "key": "font-size:300%",
+              "value": "300%"
+            },
+            {
+              "key": "font-size:400%",
+              "value": "400%"
+            },
+            {
+              "key": "font-size:500%",
+              "value": "500%"
+            },
+            {
+              "key": "font-size:600%",
+              "value": "600%"
+            },
+            {
+              "key": "font-size:700%",
+              "value": "700%"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "crn-paragraph",
+      "text_pt_BR": "Parágrafo",
+      "text_en_US": "Paragraph",
+      "class": "adjust-icon mdi  mdi-format-paragraph",
+      "wrapper": false,
+      "template": "<p xattr-position=\"text-center\" class=\"text-center\">Some friendly Paragraph</p>",
+      "properties": {
+        "xattr-position": {
+          "displayName": "Position"
+        },
+        "ng-click": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": true,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": true,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": true,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": true,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": true,
+            "type": "event"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "text-left",
+              "value": "Standard",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "text-center",
+              "value": "Middle",
+              "icon": "mdi mdi-ray-vertex"
+            },
+            {
+              "key": "text-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        }
+      ],
+      "childrenProperties": [
+        {
+          "name": "ng-mouseover",
+          "selector": "p",
+          "type": "event"
+        }
+      ]
+    },
+    {
+      "name": "crn-label",
+      "text_pt_BR": "Conteúdo",
+      "text_en_US": "Content",
+      "class": "adjust-icon mdi  mdi-format-header-2",
+      "wrapper": false,
+      "template": "<h2 xattr-position=\"text-center\" class=\"text-center\">Some label text</h2>",
+      "properties": {
+        "xattr-position": {
+          "displayName": "Position"
+        },
+        "ng-click": {
+          "removable": false,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-position",
+          "type": "btngroup",
+          "target": "class",
+          "values": [
+            {
+              "key": "text-left",
+              "value": "Standard",
+              "icon": "mdi mdi-ray-start"
+            },
+            {
+              "key": "text-center",
+              "value": "Middle",
+              "icon": "mdi mdi-ray-vertex"
+            },
+            {
+              "key": "text-right",
+              "value": "Right",
+              "icon": "mdi mdi-ray-end"
+            }
+          ]
+        }
+      ],
+      "childrenProperties": [
+        {
+          "name": "ng-mouseover",
+          "selector": "h2",
+          "type": "event"
+        }
+      ]
+    },
+    {
+      "name": "crn-item-swipe",
+      "text_pt_BR": "Item da Lista Swipe",
+      "text_en_US": "List Item Swipe",
+      "class": "adjust-icon mdi mdi-minus",
+      "pallete": false,
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/item.swipe.template.html",
+      "properties": {
+        "onclick": {
+          "type": "event"
+        }
+      },
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "",
+            "targetSelector": ".item"
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-list-swipe",
+      "text_pt_BR": "Lista com swipe",
+      "text_en_US": "List Swipe",
+      "class": "adjust-icon mdi mdi-ray-end-arrow",
+      "forcedGroup": true,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/list.swipe.template.html",
+      "childrenProperties": [
+        {
+          "name": "crn-datasource",
+          "selector": "ion-list",
+          "displayName_pt_BR": "Fonte de dados",
+          "displayName_en_US": "Datasource",
+          "type":"pageDatasource",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        },
+         {
+          "name": "ng-click",
+          "selector": "ion-option-button.button-positive",
+          "type": "event",
+          "displayName_pt_BR": "Ao Clicar em Editar",
+          "displayName_en_US": "On Edit Click"
+        },
+        {
+          "name": "ng-click",
+          "selector": "ion-option-button.button-assertive",
+          "type": "event",
+          "displayName_pt_BR": "Ao Clicar em Deletar",
+          "displayName_en_US": "On Delete Click"
+        },
+        {
+          "name": "on-drag",
+          "selector": "div.row",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "div.row",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe-left",
+          "selector": "div.row",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe-right",
+          "selector": "div.row",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "div.row",
+          "type": "event"
+        }
+      ],
+      "properties": {
+        "onclick": {
+          "type": "event"
+        }
+      },
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "<div class=\"col\">New Item</div>",
+            "targetSelector": ".row"
+          }
+        ]
+      },
+      "styles": [
+        {
+          "selector": "div#{id} .item-content",
+          "text_pt_BR": "Geral",
+          "text_en_US": "General"
+        },
+        {
+          "selector": "div#{id} .item",
+          "text_pt_BR": "Fundo do Swipe",
+          "text_en_US": "Swipe Background"
+        },
+        {
+          "selector": "div#{id} .col",
+          "text_pt_BR": "Item",
+          "text_en_US": "Item"
+        },
+        {
+          "selector": "div#{id} .button-positive",
+          "text_pt_BR": "Botão de Editar",
+          "text_en_US": "Edit Button"
+        },
+        {
+          "selector": "div#{id} .button-assertive",
+          "text_pt_BR": "Botão de Excluir",
+          "text_en_US": "Delete Button"
+        }
+      ]
+    },
+    {
+      "name": "crn-button",
+      "text_pt_BR": "Botão",
+      "text_en_US": "Button",
+      "class": "adjust-icon mdi mdi-stop",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/button.template.html",
+      "properties": {
+        "ng-click": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-tap": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-double-tap": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-hold": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-drag": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-swipe": {
+          "removable": true,
+          "type": "event"
+        },
+        "xattr-fullsize": {
+          "displayName": "Width"
+        },
+        "xattr-theme": {
+          "displayName": "Theme"
+        },
+        "xattr-type": {
+          "displayName": "Style Type"
+        },
+        "xattr-size": {
+          "displayName": "Size"
+        }
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-size",
+          "type": "options",
+          "selector": "div",
+          "target": "class",
+          "values": [
+            {
+              "key": "",
+              "value": "Standard"
+            },
+            {
+              "key": "button-large",
+              "value": "Large"
+            },
+            {
+              "key": "button-small",
+              "value": "Small"
+            }
+          ]
+        },
+        {
+          "name": "xattr-type",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "",
+              "value": "Default"
+            },
+            {
+              "key": "button-clear",
+              "value": "Clear"
+            },
+            {
+              "key": "button-outline",
+              "value": "Outline"
+            }
+          ]
+        },
+        {
+          "name": "xattr-fullsize",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "button-block",
+              "value": "Block"
+            },
+            {
+              "key": "",
+              "value": "Inline"
+            },
+            {
+              "key": "button-full",
+              "value": "Full Width"
+            }
+          ]
+        },
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "",
+              "value": "Default"
+            },
+            {
+              "key": "button-assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "button-balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "button-energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "button-light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "button-stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "button-calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "button-positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "button-royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "button-dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        },
+        {
+          "name": "xattr-icon-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "",
+              "value": "Default"
+            },
+            {
+              "key": "assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        }
+      ],
+      "childrenProperties": [
+        {
+          "name": "class",
+          "selector": "i",
+          "displayName_pt_BR": "Ícone",
+          "displayName_en_US": "Icon",
+          "type": "icon"
+        },
+        {
+          "name": "xattr-icon-theme",
+          "selector": "i",
+          "displayName_pt_BR": "Tema do ícone",
+          "displayName_en_US": "Icon Theme",
+          "type": "text"
+        },
+        {
+          "name": "content",
+          "selector": "span",
+          "type": "content"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "button#{id}",
+          "text_pt_BR": "Botão",
+          "text_en_US": "Button"
+        },
+        {
+          "selector": "button#{id} i",
+          "text_pt_BR": "Ícone",
+          "text_en_US": "Icon"
+        },
+        {
+          "selector": "button#{id} span",
+          "text_pt_BR": "Descrição",
+          "text_en_US": "Description"
+        }
+      ]
+    },
+    {
+      "name": "crn-button-bar",
+      "text_pt_BR": "Barra de botões",
+      "text_en_US": "Button Bar",
+      "class": "adjust-icon mdi mdi-view-module",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/button-bar.template.html",
+      "forcedGroup": true,
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "<button class=\"component-holder button button-dark button-block\" data-component=\"crn-button\"type=\"submit\" ng-click=\"\" xattr-size=\"\" xattr-type=\"\" xattr-theme=\"button-positive\" xattr-fullsize=\"button-block\"><i class=\"icon ion-home icon-left\"></i><span> Button</span></button>",
+            "targetSelector": ".button-bar"
+          }
+        ]
+      },
+      "styles": [
+        {
+          "selector": "div#{id} button",
+          "text_pt_BR": "Botão",
+          "text_en_US": "Button"
+        },
+        {
+          "selector": "div#{id} i",
+          "text_pt_BR": "Ícone",
+          "text_en_US": "Icon"
+        },
+        {
+          "selector": "div#{id} span",
+          "text_pt_BR": "Descrição",
+          "text_en_US": "Description"
+        }
+      ],
+      "childrenProperties": [
+        {
+          "name": "on-hold",
+          "selector": "button",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "button",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "button",
+          "type": "event"
+        }
+      ]
+    },
+    {
+      "name": "crn-item-options",
+      "text": "Item Options",
+      "class": "adjust-icon mdi mdi-microsoft",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/item.options.template.html",
+      "pallete": false,
+      "classForPreview": {
+        "targetSelector": ".crn-item-options",
+        "condition": [
+          {
+            "name": "data-item",
+            "value": "true",
+            "class": "item-options"
+          }
+        ]
+      },
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "<ion-option-button class=\"button-positive button\"><i class=\"icon ion-home\">home</i></ion-option-button>",
+            "targetSelector": ".crn-item-options"
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-option-button",
+      "text": "Option Button",
+      "pallete": false,
+      "class": "adjust-icon mdi mdi-stop",
+      "template": "<ion-option-button class=\"button-positive button\"><i class=\"icon ion-home\">home</i></ion-option-button>",
+      "groupedChildren": [
+        {
+          "text_pt_BR": "Ícone",
+          "text_en_US": "Icon",
+          "selector": "i"
+        }
+      ]
+    },
+    {
+      "name": "crn-ion-nav-buttons",
+      "text_pt_BR": "Botão da barra de navegação",
+      "text_en_US": "Nav Button",
+      "class": "adjust-icon mdi mdi-tab",
+      "wrapper": true,
+      "pallete": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/nav.bar.template.html",
+      "classForPreview": {
+        "targetSelector": ".crn-ion-nav-buttons",
+        "condition": [
+          {
+            "name": "side",
+            "value": "right",
+            "class": "crn-nav-button-right"
+          },
+          {
+            "name": "side",
+            "value": "left",
+            "class": "crn-nav-button-left"
+          }
+        ]
+      },
+      "attributesForPreview": [
+        {
+          "name": "side",
+          "type": "btngroup",
+          "values": [
+            {
+              "key": "left",
+              "value": "left",
+              "icon": "glyphicon glyphicon-align-left"
+            },
+            {
+              "key": "right",
+              "value": "right",
+              "icon": "glyphicon glyphicon-align-right"
+            }
+          ]
+        }
+      ],
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "<button class=\"button button-stable\"><i class=\"icon ion-plus-round\"></i></button>",
+            "targetSelector": ".crn-ion-nav-buttons"
+          }
+        ]
+      },
+      "styles": [
+        {
+          "selector": "button#{id}",
+          "text_pt_BR": "Botão",
+          "text_en_US": "Button"
+        },
+        {
+          "selector": "button#{id} i",
+          "text_pt_BR": "Ícone",
+          "text_en_US": "Icon"
+        }
+      ]
+    },
+    {
+      "name": "crn-ion-content",
+      "text_pt_BR": "Conteúdo",
+      "text_en_US": "Content",
+      "pallete":false,
+      "class": "adjust-icon mdi mdi-airplay",
+      "wrapper": false,
+      "template": "<ion-content data-component=\"crn-ion-content\"></ion-content>",
+      "controls":{
+        "ungroup":true,
+        "resizable":false,
+        "additive":false,
+        "duplicable":false,
+        "pluggable":false,
+        "removable":false
+      },
+      "droppableArea":{
+        "onmiddle":true,
+        "ontop":false,
+        "onbottom":false,
+        "onleft":false,
+        "onright":false
+      }
+    },
+    {
+      "name": "crn-ion-header-bar",
+      "text_pt_BR": "Cabeçalho",
+      "text_en_US": "Header",
+      "class": "adjust-icon mdi mdi-page-layout-header",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/components/templates/ion-header-bar.template.html",
+      "properties":{
+        "align-title":{
+          "displayName_pt_BR": "Alinhamento do Título",
+          "displayName_en_US": "Title Align"
+        },
+        "on-tap": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-double-tap": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-hold": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-drag": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-swipe": {
+          "removable": true,
+          "type": "event"
+        }
+      },
+      "controls":{
+        "ungroup":true,
+        "resizable":false,
+        "additive":false,
+        "duplicable":false,
+        "pluggable":false,
+        "removable":false
+      },
+      "droppableArea":{
+        "onmiddle":true,
+        "ontop":false,
+        "onbottom":false,
+        "onleft":false,
+        "onright":false
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "bar-assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "bar-balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "bar-energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "bar-light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "bar-stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "bar-calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "bar-positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "bar-royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "bar-dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        },
+        {
+          "name": "align-title",
+          "type": "options",
+
+          "target": ":self[align-title]",
+          "values": [
+            {
+              "key": "left",
+              "value": "left"
+            },
+            {
+              "key": "center",
+              "value": "center"
+            },
+            {
+              "key": "right",
+              "value": "right"
+            }
+          ]
+        }
+      ],
+      "childrenProperties": [
+        {
+          "name": "content",
+          "selector": "h1[class='title']",
+          "type":"content"
+        },
+        {
+          "name": "ng-click",
+          "selector": "div.buttons-left",
+          "type": "event",
+          "displayName_pt_BR": "Ao Clicar no Botão Esquerdo",
+          "displayName_en_US": "On Left Button Click"
+        },
+        {
+          "name": "ng-click",
+          "selector": "div.buttons-right",
+          "type": "event",
+          "displayName_pt_BR": "Ao Clicar no Botão Direito",
+          "displayName_en_US": "On Right Button Click"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "#{id} h1",
+          "text_pt_BR": "Título",
+          "text_en_US": "Title"
+        }
+      ]
+    },
+    {
+      "name": "crn-ion-footer-bar",
+      "text_pt_BR": "Rodapé",
+      "text_en_US": "Footer",
+      "class": "adjust-icon mdi mdi-page-layout-footer",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/components/templates/ion-footer-bar.template.html",
+      "properties":{
+        "align-title":{
+          "displayName_pt_BR": "Alinhamento do Título",
+          "displayName_en_US": "Title Align"
+        },
+        "on-tap": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-double-tap": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-hold": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-drag": {
+          "removable": true,
+          "type": "event"
+        },
+        "on-swipe": {
+          "removable": true,
+          "type": "event"
+        }
+      },
+      "controls":{
+        "ungroup":true,
+        "resizable":false,
+        "additive":false,
+        "duplicable":false,
+        "pluggable":false,
+        "removable":false
+      },
+      "droppableArea":{
+        "onmiddle":true,
+        "ontop":false,
+        "onbottom":false,
+        "onleft":false,
+        "onright":false
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "bar-assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "bar-balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "bar-energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "bar-light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "bar-stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "bar-calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "bar-positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "bar-royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "bar-dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        },
+        {
+          "name": "align-title",
+          "type": "options",
+
+          "target": ":self[align-title]",
+          "values": [
+            {
+              "key": "left",
+              "value": "left"
+            },
+            {
+              "key": "center",
+              "value": "center"
+            },
+            {
+              "key": "right",
+              "value": "right"
+            }
+          ]
+        }
+      ],
+      "childrenProperties": [
+        {
+          "name": "content",
+          "selector": "h1[class='title']",
+          "type":"content"
+        },
+        {
+          "name": "ng-click",
+          "selector": "div .button-left",
+          "type": "event",
+          "displayName_pt_BR": "Ao Clicar no Botão Esquerdo",
+          "displayName_en_US": "On Left Button Click"
+        },
+        {
+          "name": "ng-click",
+          "selector": "div .button-right",
+          "type": "event",
+          "displayName_pt_BR": "Ao Clicar no Botão Direito",
+          "displayName_en_US": "On Right Button Click"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "#{id} h1",
+          "text_pt_BR": "Título",
+          "text_en_US": "Title"
+        },
+        {
+          "selector": "#{id} .button-left",
+          "text_pt_BR": "Botão Esquerdo",
+          "text_en_US": "Left Button"
+        },
+        {
+          "selector": "#{id} .button-right",
+          "text_pt_BR": "Botão Direito",
+          "text_en_US": "Right Button"
+        }
+      ]
+    },
+    {
+      "name": "crn-ion-tab",
+      "text_pt_BR": "Aba",
+      "text_en_US": "Tab",
+      "class": "adjust-icon mdi mdi-window-maximize",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/components/templates/ion-tab.template.html",
+      "forcedGroup": true,
+      "properties": {
+        "on-double-tap": {
+          "type": "event"
+        },
+        "on-hold": {
+          "type": "event"
+        },
+        "on-swipe": {
+          "type": "event"
+        },
+        "on-drag": {
+          "type": "event"
+        }
+      },
+      "handleRules": {
+        "canIncrement": true,
+        "designTimeRules": true,
+        "rules": [
+          {
+            "sourceHTML": "<ion-tab title=\"Title\" icon-on=\"ion-ios-filing\" icon-off=\"ion-ios-filing-outline\" id=\"ion-tab-${RANDOM}\" data-component=\"crn-ion-tab-item\" href=\"\" badge= \"0\"></ion-tab>",
+            "targetSelector": ":self"
+          }
+        ]
+      },
+      "attributesForPreview": [
+        {
+          "name": "xattr-theme",
+          "type": "options",
+          "target": "class",
+          "values": [
+            {
+              "key": "tabs-assertive",
+              "value": "Assertive",
+              "color": "#ef473a"
+            },
+            {
+              "key": "tabs-balanced",
+              "value": "Balanced",
+              "color": "#33cd5f"
+            },
+            {
+              "key": "tabs-energized",
+              "value": "Energized",
+              "color": "#ffc900"
+            },
+            {
+              "key": "tabs-light",
+              "value": "Light",
+              "color": "#fff"
+            },
+            {
+              "key": "tabs-stable",
+              "value": "Stable",
+              "color": "#f8f8f8"
+            },
+            {
+              "key": "tabs-calm",
+              "value": "Calm",
+              "color": "#11c1f3"
+            },
+            {
+              "key": "tabs-positive",
+              "value": "Positive",
+              "color": "#387ef5"
+            },
+            {
+              "key": "tabs-royal",
+              "value": "Royal",
+              "color": "#886aea"
+            },
+            {
+              "key": "tabs-dark",
+              "value": "Dark",
+              "color": "#444"
+            }
+          ]
+        }
+      ],
+      "styles": [
+        {
+          "selector": "ion-tabs#{id} .tabs",
+          "text_pt_BR": "Geral",
+          "text_en_US": "General"
+        },
+        {
+          "selector": "ion-tabs#{id} i",
+          "text_pt_BR": "Ícones",
+          "text_en_US": "Icons"
+        },
+        {
+          "selector": "ion-tabs#{id} span",
+          "text_pt_BR": "Descrição",
+          "text_en_US": "Description"
+        }
+      ]
+    },
+    {
+      "name": "crn-ion-tab-item",
+      "text_pt_BR": "Item de Aba",
+      "text_en_US": "Tab Item",
+      "class": "adjust-icon mdi mdi-window-maximize",
+      "wrapper": false,
+      "designTimeDynamic": true,
+      "pallete": false,
+      "designTimeHTMLURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/components/templates/ion-tab-item.designtime.html",
+      "designTimeSelector": ":self",
+      "template": "<ion-tab title=\"\" icon-on=\"ion-ios-filing\" icon-off=\"ion-ios-filing-outline\" id=\"ion-tab-${RANDOM}\" href=\"\" badge=\"\"></ion-tab>",
+      "properties": {
+        "icon-on":{
+          "displayName_pt_BR": "Ícone ativo",
+          "displayName_en_US": "Active Icon",
+          "type":"icon"
+        },
+        "icon-off":{
+          "displayName_pt_BR": "Ícone Inativo",
+          "displayName_en_US": "Inactive Icon",
+          "type":"icon"
+        },
+        "href": {
+          "removable": false,
+          "type": "projectResource",
+          "resourceType": "text/html"
+        },
+        "ng-click":{
+          "removable": false,
+          "type": "event"
+        }
+      }
+    },
+    {
+      "name": "crn-input-button",
+      "text_pt_BR": "Entrada de texto com botão",
+      "text_en_US": "Input Button",
+      "class": "adjust-icon mdi mdi-label-outline",
+      "wrapper": false,
+      "forcedGroup": true,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/components/templates/textinputbutton.template.html",
+      "properties": {
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "childrenProperties": [
+        {
+          "name": "placeholder",
+          "selector": "input[placeholder]",
+          "type":"text"
+        },
+        {
+          "name": "ng-model",
+          "selector": "input[ng-model]",
+          "type":"text"
+        },
+        {
+          "name": "type",
+          "selector": "input[type]",
+          "type":"inputType"
+        },
+        {
+          "name": "ng-click",
+          "selector": "button",
+          "type": "event",
+          "displayName_pt_BR": "Ao Clicar no Botão",
+          "displayName_en_US": "On Button Click"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "button",
+          "type": "event",
+          "displayName_pt_BR": "Ao Clique Duplo Rápido no Botão",
+          "displayName_en_US": "On Button Double Tap"
+        },
+        {
+          "name": "ng-click",
+          "selector": "input",
+          "type": "event",
+          "displayName_pt_BR": "Ao Clicar no Texto",
+          "displayName_en_US": "On Input Click"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "input",
+          "type": "event",
+          "displayName_pt_BR": "Ao Clique Duplo Rápido no Texto",
+          "displayName_en_US": "On Input Double Click"
+        },
+        {
+          "name": "ng-keydown",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-keyup",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-focus",
+          "selector": "input",
+          "type": "event"
+        },
+        {
+          "name": "ng-blur",
+          "selector": "input",
+          "type": "event"
+        }
+      ],
+      "groupedChildren": [
+        {
+          "text_pt_BR": "Button",
+          "text_en_US": "Button",
+          "selector": "button"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} label",
+          "text_pt_BR": "Entrada de Texto",
+          "text_en_US": "Text Input"
+        },
+        {
+          "selector": "div#{id} .button",
+          "text_pt_BR": "Botão",
+          "text_en_US": "Button"
+        },
+        {
+          "selector": "div#{id} .button i ",
+          "text_pt_BR": "Ícone do Botão",
+          "text_en_US": "Button Icon"
+        },
+        {
+          "selector": "div#{id} .button span",
+          "text_pt_BR": "Descrição do Botão",
+          "text_en_US": "Button Description"
+        }
+      ]
+    },
+    {
+      "name": "crn-evaluation",
+      "text_pt_BR": "Avaliação",
+      "text_en_US": "Evaluation",
+      "class": "adjust-icon mdi mdi-star-outline",
+      "wrapper": false,
+      "designTimeHTMLURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/components/templates/evaluation.designtime.html",
+      "designTimeSelector": ":self",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/evaluation.template.html",
+      "properties": {
+        "ng-model": {
+          "onSave": "javascript:function() { var result \u003d arguments[0]; if (result.indexOf(\u0027.\u0027) \u003d\u003d -1 \u0026\u0026 result.trim().length \u003e 0 ) { result \u003d \u0027vars.\u0027+result;  }  return result; }",
+          "onDisplay": "javascript:function() { return arguments[0].replace(\u0027vars.\u0027,\u0027\u0027); }"
+        },
+        "ng-click": {
+          "removable": false,
+          "type": "event"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      },
+      "styles": [
+        {
+          "selector": "div#{id} i.ion-android-star",
+          "text_pt_BR": "Ícone Estrela Preenchido",
+          "text_en_US": "Filled Star Icon"
+        },
+        {
+          "selector": "div#{id} i.ion-android-star-outline",
+          "text_pt_BR": "Ícone Estrela Contorno",
+          "text_en_US": "Outlined Star Icon"
+        }
+      ]
+    },
+    {
+      "name": "crn-dynamic-image",
+      "text_pt_BR": "Imagem dinâmica",
+      "text_en_US": "Dynamic Image",
+      "class": "adjust-icon mdi mdi-image",
+      "wrapper": false,
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/dynamicimage.template.html",
+      "properties": {
+        "ng-model": {
+          "onSave": "javascript:function() { var result = arguments[0]; if (result.indexOf('.') == -1 && result.trim().length > 0 ) { result = 'vars.'+result;  }  return result; }",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        }
+      },
+      "childrenProperties": [
+        {
+          "name": "content",
+          "selector": "label",
+          "type": "content"
+        },
+        {
+          "name": "ng-model",
+          "selector": "div[dynamic-image]",
+          "type": "text"
+        },
+        {
+          "name": "max-file-size",
+          "selector": "div[dynamic-image]",
+          "type": "text"
+        },
+        {
+          "name": "ng-click",
+          "selector": "div[dynamic-image]",
+          "type": "event"
+        },
+        {
+          "name": "on-tap",
+          "selector": "div[dynamic-image]",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "div.item",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "div.item",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "div.item",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} .form-group",
+          "text_pt_BR": "Campo Interno",
+          "text_en_US": "Internal Field"
+        },
+        {
+          "selector": "div#{id} label",
+          "text_pt_BR": "Label",
+          "text_en_US": "Label"
+        },
+        {
+          "selector": "div#{id} .button-positive",
+          "text_pt_BR": "Botão de Câmera",
+          "text_en_US": "Camera Button"
+        },
+        {
+          "selector": "div#{id} .remove-image-button",
+          "text_pt_BR": "Botão de Fechar",
+          "text_en_US": "Close Button"
+        }
+      ]
+    },
+    {
+      "name": "crn-dynamic-file",
+      "text_pt_BR": "Envio de Arquivo Dinâmico",
+      "text_en_US": "Dynamic File Upload",
+      "class": "adjust-icon mdi mdi-cloud-upload",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/dynamicfile.template.html",
+      "properties": {
+        "ng-model": {
+          "onSave": "javascript:function() { var result = arguments[0]; if (result.indexOf('.') == -1 && result.trim().length > 0 ) { result = 'vars.'+result;  }  return result; }",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        }
+      },
+      "groupedChildren": [
+        {
+          "text_pt_BR": "R�tulo",
+          "text_en_US": "Label",
+          "selector": "label"
+        },
+        {
+          "text_pt_BR": "Campo",
+          "text_en_US": "Field",
+          "selector": "dynamic-file|div[dynamic-file]"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} .form-group",
+          "text_pt_BR": "Campo Interno",
+          "text_en_US": "Internal Field"
+        },
+        {
+          "selector": "div#{id} label",
+          "text_pt_BR": "Label",
+          "text_en_US": "Label"
+        }
+      ],
+      "childrenProperties": [
+        {
+          "name": "ng-click",
+          "selector": "div[dynamic-file]",
+          "type": "event"
+        },
+        {
+          "name": "on-tap",
+          "selector": "div[dynamic-file]",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "div.item",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "div.item",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "div.item",
+          "type": "event"
+        }
+      ]
+    },
+    {
+      "name": "crn-QRCode",
+      "text_pt_BR": "Código QR",
+      "text_en_US": "QR Code",
+      "class": "adjust-icon mdi mdi-qrcode",
+      "wrapper": false,
+      "template": "<div qr=\"true\" ng-model=\"vars.QR${RANDOM}\" ><div> </div> </div>",
+      "designTimeHTML":"<img style=\"height: 100%;width:100%;min-height:100%; min-width:100%;\"  src=\"plugins/cronapp-framework-mobile-js/img/qr-code.png\"/>",
+      "designTimeSelector": "div",
+      "properties": {
+        "ng-model": {
+          "onSave": "javascript:function() { var result = arguments[0]; if (result.indexOf('.') == -1 && result.trim().length > 0 ) { result = 'vars.'+result;  }  return result; }",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        },
+        "qr": {
+          "removable": false,
+          "displayName": "QR Code"
+        },
+        "on-hold": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-double-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-tap": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-swipe": {
+           "removable": false,
+            "type": "event"
+        },
+        "on-drag": {
+           "removable": false,
+            "type": "event"
+        }
+      }
+    },
+    {
+      "name": "crn-chart",
+      "text_pt_BR": "Gráfico",
+      "text_en_US": "Chart",
+      "class": "adjust-icon mdi mdi-chart-bar",
+      "wrapper": false,
+      "template": "<div class=\"col-xs-12\"> <canvas id=\"chart${RANDOM}\" data-component=\"crn-chart\" class=\"col-xs-12\"></canvas></div>",
+      "designTimeHTML":"<img style=\"height: 100%;width:100%;min-height:100%; min-width:100%;\"  src=\"plugins/cronapp-framework-mobile-js/img/svg-charts.svg\"/>",
+      "designTimeSelector": "canvas",
+      "childrenProperties":[
+        {
+          "name":"id",
+          "selector":"canvas",
+          "type":"text",
+          "displayName_pt_BR": "Identificador do gráfico",
+          "displayName_en_US": "Chart Id"
+        }]
+
+    },
+    {
+      "name": "crn-chat",
+      "text_pt_BR": "Chat",
+      "text_en_US": "Chat",
+      "pallete": false,
+      "class": "adjust-icon mdi mdi-wechat",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/chat.template.html"
+    },
+    {
+      "name": "crn-ion-list",
+      "text_pt_BR": "Lista Avançada",
+      "text_en_US": "Advanced List",
+      "class": "adjust-icon mdi mdi-view-quilt",
+      "templateURL": "src/main/mobileapp/www/plugins/cronapp-framework-mobile-js/dist/components/templates/advanced.list.template.html",
+      "designTimeHTML": "<ion-list can-swipe=\"listCanSwipe\"><ion-item class=\"item\"><div class=\"item-avatar\"><img src=\"img/nophoto.png\"><h2>Title</h2><p>Subtitle</p></div><ion-option-button class=\"button-positive\"><i class=\"icon ion-edit\"></i></ion-option-button><ion-option-button class=\"button-assertive\"><i class=\"icon ion-trash-a\"></i></ion-option-button></ion-item></ion-list>",
+      "designTimeSelector": "cron-list",
+      "properties": {},
+      "childrenProperties": [
+        {
+          "name": "options",
+          "selector": "cron-list",
+          "displayName_pt_BR": "Configuração",
+          "displayName_en_US": "Configuration"
+        },
+        {
+          "name": "ng-click",
+          "selector": "cron-list",
+          "type": "event"
+        },
+        {
+          "name": "on-double-tap",
+          "selector": "cron-list",
+          "type": "event"
+        },
+        {
+          "name": "ng-keydown",
+          "selector": "cron-list",
+          "type": "event"
+        },
+        {
+          "name": "ng-keyup",
+          "selector": "cron-list",
+          "type": "event"
+        },
+        {
+          "name": "ng-focus",
+          "selector": "cron-list",
+          "type": "event"
+        },
+        {
+          "name": "ng-blur",
+          "selector": "cron-list",
+          "type": "event"
+        },
+        {
+          "name": "on-hold",
+          "selector": "cron-list",
+          "type": "event"
+        },
+        {
+          "name": "on-swipe",
+          "selector": "cron-list",
+          "type": "event"
+        },
+        {
+          "name": "on-drag",
+          "selector": "cron-list",
+          "type": "event"
+        }
+      ],
+      "styles": [
+        {
+          "selector": "div#{id} h2",
+          "text_pt_BR": "Título",
+          "text_en_US": "Title"
+        },
+        {
+          "selector": "div#{id} p",
+          "text_pt_BR": "Subtítulo",
+          "text_en_US": "Subtitle"
+        },
+        {
+          "selector": "div#{id} .item-input",
+          "text_pt_BR": "Pesquisar",
+          "text_en_US": "Search"
+        },
+        {
+          "selector": "div#{id} .item-content",
+          "text_pt_BR": "Lista",
+          "text_en_US": "List"
+        }
+      ]
+    },
+    {
+      "name": "crn-infinite-scroll",
+      "text_pt_BR": "Scroll infinito",
+      "text_en_US": "Infinite Scroll",
+      "class": "adjust-icon mdi mdi-format-line-spacing",
+      "template": "<cron-infinite-scroll crn-datasource=\"\"></cron-infinite-scroll>",
+      "designTimeHTML": "<img style=\"height: 7%;width:10%;min-height:7%; min-width:7%;\"  src=\"plugins/cronapp-framework-mobile-js/img/svg-charts.svg\"/>",
+      "designTimeSelector": "cron-infinite-scroll",
+      "properties": {},
+      "childrenProperties": [
+        {
+          "name": "crn-datasource",
+          "selector": "cron-infinite-scroll",
+          "displayName_pt_BR": "Fonte de dados",
+          "displayName_en_US": "Datasource",
+          "type":"pageDatasource",
+          "onDisplay": "javascript:function() { return arguments[0].replace('vars.',''); }"
+        }
+      ]
+    },
+    {
+      "name": "crn-start",
+      "pallete": false,
+      "wrapper": false,
+      "properties": {
+        "screen-params": {
+          "removable": false
+        }
+      }
+    }
+  ]
+}
